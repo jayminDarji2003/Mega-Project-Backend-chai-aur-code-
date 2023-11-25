@@ -1,8 +1,35 @@
-// Importing 
-import mongoose from "mongoose";
-import { DB_NAME } from "./constants";
-import express from "express";
+// first of all we need to get the environment variables because in our project we are using environment variables different different places.
 
+// require("dotenv").config({path: './env'});
+import dotenv from 'dotenv';  // for consistency with module js
+
+import connectToMongodb from "./db/dbConnect.js";
+
+dotenv.config({
+    path: './env'
+})
+
+connectToMongodb()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+     ---------- first way of connecting mongodb -------------- 
+
+import express from "express";
 const app = express();
 
 (async () => {
@@ -23,3 +50,5 @@ const app = express();
         throw error;
     }
 })()
+
+*/
